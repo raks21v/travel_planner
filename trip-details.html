@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trip Details</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Your Trip Details</h1>
+    </header>
+    <div id="trip-details"></div>
+    <a href="index.html" class="btn">Back to Home</a>
+  </div>
+  <script src="assets/js/script.js"></script>
+  <script>
+    // Fetch the last saved trip from local storage
+    const tripDetails = JSON.parse(localStorage.getItem("savedTrips"))?.slice(-1)[0];
+  
+    if (tripDetails) {
+      const container = document.getElementById("tripDetails");
+      container.innerHTML = `
+        <h1>${tripDetails.destination}</h1>
+        <p>${tripDetails.description}</p>
+        <h2>Hotel Recommendations</h2>
+        ${tripDetails.hotels.map(hotel => `
+          <div>
+            <h3>${hotel.name}</h3>
+            <p>Price: ${hotel.price}</p>
+            <p>Rating: ${hotel.rating}</p>
+          </div>
+        `).join('')}
+        <h2>Places to Visit</h2>
+        ${tripDetails.itinerary.map((day, index) => `
+          <h3>Day ${index + 1}: ${day.title}</h3>
+          <p>${day.description}</p>
+        `).join('')}
+      `;
+    } else {
+      document.getElementById("tripDetails").innerHTML = "<p>No trip found.</p>";
+    }
+  </script>
+  
+</body>
+</html>

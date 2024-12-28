@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plan Your Trip</title>
+  <link rel="stylesheet" href="assets/css/styles1.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Tell us your travel preferences 🏝️🌴</h1>
+      <p>
+        Just provide some basic information, and our trip planner will generate
+        a customized itinerary based on your preferences.
+      </p>
+    </header>
+    <form id="travel-preferences-form">
+      <div class="form-group">
+        <label for="destination">What is your destination of choice?</label>
+        <input type="text" id="destination" placeholder="Enter your destination" required>
+      </div>
+
+      <div class="form-group">
+        <label for="days">How many days are you planning your trip?</label>
+        <input type="number" id="days" placeholder="Ex. 3" required>
+      </div>
+
+      <div class="form-group">
+        <label>What is your budget?</label>
+        <div class="options">
+          <label>
+            <input type="radio" name="budget" value="cheap" required>
+            <div class="option">Cheap<br><span>Stay conscious of costs</span></div>
+          </label>
+          <label>
+            <input type="radio" name="budget" value="moderate" required>
+            <div class="option">Moderate<br><span>Keep cost on the average side</span></div>
+          </label>
+          <label>
+            <input type="radio" name="budget" value="luxury" required>
+            <div class="option">Luxury<br><span>Don’t worry about cost</span></div>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Who do you plan on traveling with on your next adventure?</label>
+        <div class="options">
+          <label>
+            <input type="radio" name="companions" value="just-me" required>
+            <div class="option">Just Me<br><span>A solo traveler</span></div>
+          </label>
+          <label>
+            <input type="radio" name="companions" value="couple" required>
+            <div class="option">A Couple<br><span>Two travelers in tandem</span></div>
+          </label>
+          <label>
+            <input type="radio" name="companions" value="family" required>
+            <div class="option">Family<br><span>A group of fun-loving adventurers</span></div>
+          </label>
+          <label>
+            <input type="radio" name="companions" value="friends" required>
+            <div class="option">Friends<br><span>A bunch of thrill-seekers</span></div>
+          </label>
+        </div>
+      </div>
+
+      <button type="submit">Generate Trip</button>
+    </form>
+  </div>
+  <script type="module" src="assets/js/script.js"></script>
+</body>
+</html>
